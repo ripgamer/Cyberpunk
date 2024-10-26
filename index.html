@@ -2,15 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/cplogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    
-    <title>Vite App</title>
+
+    <title>CyberPunk-2077</title>
+<nav class="bg-black  bg-opacity-50 backdrop-filter backdrop-blur-lg drop-shadow-2xl sticky w-full h-24 p-4 px-6 md:px-20 flex justify-between items-center text-center text-white font-mono font-bold">
+  <div class="left items-center">
+    <a href="/"><img class="w-32 h-16 md:w-44 md:h-24" src="/cplogo.png" alt="logo"></a>
+  </div>
+  <div class="right flex items-center text-center">
+    <button id="menu-button" class="md:hidden text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+    <ul id="menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 items-center text-center justify-center bg-black md:bg-transparent absolute md:relative top-24 md:top-0 left-0 w-full md:w-auto p-4 md:p-0">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="border rounded-full p-2 px-4 bg-blue-500 ml-4 shadow-lg">
+      <a class="" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.getElementById('menu-button').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+    <div class="w-full h-[80%] overflow-hidden relative">
+      <div style="position: absolute; top: -10%; width: 100%; height: 100%;">
+        <canvas id="canvas" class="w-full h-full  "></canvas>
+      </div>
+        
+      </div>
+      <img class="absolute w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-lighten" src="/cplogo.png" alt="logo">
+    </div>
+   
     <script type="module" src="/main.js"></script>
   </body>
 </html>
